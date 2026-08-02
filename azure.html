@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Azure学習プラン — cultivate</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzEiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjExIiByPSIzLjIiIGZpbGw9IiMyYTc4ZDYiLz4KPC9zdmc+">
+<style>
+:root{
+  --bg:#f7f6f3;
+  --card:#ffffff;
+  --muted:#6b6a67;
+  --accent:#2a78d6;
+  --success:#1baf7a;
+  --border: rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111110;
+    --card:#1a1a19;
+    --muted:#c3c2b7;
+    --accent:#3987e5;
+    --success:#199e70;
+    --border: rgba(255,255,255,0.08);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;padding:28px;font-family:-apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:#0b0b0b}
+.container{max-width:960px;margin:0 auto}
+.header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.header h1{font-size:20px;margin:0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+.section-title{font-weight:600;margin-bottom:8px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:white;font-size:12px}
+.timeline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.phase{padding:8px 12px;border-radius:8px;background:#f2f5fb;border:1px solid rgba(42,120,214,0.12);font-size:13px}
+.small{font-size:13px;color:var(--muted)}
+.list{margin:0;padding-left:18px}
+.resource a{color:var(--accent);text-decoration:none}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px dashed var(--border);text-align:left;font-size:14px}
+.cta{display:inline-block;padding:10px 14px;background:var(--success);color:white;border-radius:8px;text-decoration:none}
+.note{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <h1>Azure学習プラン — cultivate</h1>
+      <div class="small">目的：AIを用いた実務プロダクトを設計・実装できるスキル獲得</div>
+    </div>
+    <div style="margin-left:auto">
+      <span class="badge">期間: 2026‑07〜2026‑12</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">何のための学習か</div>
+    <p>これまでのクリエイティブ／UX／マーケティング経験に、Azure + OpenAI を組み合わせた実務スキルを掛け合わせる。最終アウトプットは「動く成果物（Azure上で動作するプロトタイプ）」とその解説資料。</p>
+    <p class="note">公開時の注意：個人的な会議名や他人の個人情報は非公開にしてください。具体日程は「フェーズ」や「月単位の目安」にすると見やすいです。</p>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <div class="section-title">目標（ゴール）</div>
+        <ul class="list">
+          <li>AI-900（基礎）合格</li>
+          <li>AI-102（実装）合格を目標に学習・模擬試験</li>
+          <li>Azure + OpenAI を使ったポートフォリオプロダクトを1つ公開</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="section-title">おすすめ学習フェーズ（短め）</div>
+        <div class="timeline">
+          <div class="phase">Phase 1: 基礎（2〜3週間） — AI/Cloud 基礎、AI-900</div>
+          <div class="phase">Phase 2: 応用（6〜10週） — AI-102 入門、設計演習</div>
+          <div class="phase">Phase 3: 実装（4〜8週） — プロトタイプ開発</div>
+          <div class="phase">Phase 4: ブラッシュアップ（2〜4週） — 公開 & ドキュメント</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">週次サンプル（フルタイム／副業別に調整）</div>
+        <table class="table">
+          <thead><tr><th>曜日</th><th>学習内容（例）</th></tr></thead>
+          <tbody>
+            <tr><td>月</td><td>概念学習（Azure AI サービス、認証、料金） 1.5h</td></tr>
+            <tr><td>水</td><td>Hands-on（Azure Portal, OpenAI API, サンプル実装）2h</td></tr>
+            <tr><td>金</td><td>試験対策（模擬問題・テクニカルノート整理）1h</td></tr>
+            <tr><td>土</td><td>プロトタイプ作業（設計→実装）3〜4h</td></tr>
+          </tbody>
+        </table>
+        <p class="note">※勤務時間に合わせて「合計学習時間／週」を目標化（例：6〜10時間/週）すると継続しやすいです。</p>
+      </div>
+
+      <div class="card">
+        <div class="section-title">アイデア（ポートフォリオ候補）</div>
+        <ul class="list">
+          <li>業務ログから自動で要約／改善提案をするダッシュボード（Azure Functions + OpenAI）</li>
+          <li>対話型FAQチャット（Blob Storageに保存したナレッジを参照）</li>
+          <li>画像解析＋キャプション生成でUX改善提案ツール</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="section-title">チェックポイント（マイルストーン）</div>
+        <ul class="list">
+          <li>Phase1完了：AI-900合格 or 概念整理ノート完成</li>
+          <li>Phase2中間：プロトタイプ最低限のMVPを設計</li>
+          <li>Phase3完了：Azure上で動くデモを公開</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside>
+      <div class="card">
+        <div class="section-title">推奨リソース</div>
+        <ul class="list resource">
+          <li><a href="https://learn.microsoft.com/azure/">Microsoft Learn (Azure)</a></li>
+          <li><a href="https://learn.microsoft.com/learn/paths/azure-ai-fundamentals/">AI-900 学習パス</a></li>
+          <li><a href="https://learn.microsoft.com/learn/paths/ai-102/">AI-102 学習パス</a></li>
+          <li><a href="https://learn.microsoft.com/azure/cognitive-services/">Cognitive Services ドキュメント</a></li>
+          <li>実戦：公式 Quickstart と GitHub サンプルをクローンして動かす</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="section-title">成果の見せ方（採用向け）</div>
+        <ol class="list">
+          <li>デモページ（公開URL） + 短い動画（60–120秒）</li>
+          <li>README：目的、構成、セットアップ手順、試したこと</li>
+          <li>技術要約：アーキテクチャ図、課題と解決策、使ったAzureサービス</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="section-title">公開に関する注意</div>
+        <p class="note">社内データや他者情報は絶対に公開しないでください。代わりにダミーデータや生成データで再現するのが安全です。</p>
+    </div>
+    </aside>
+  </div>
+
+  <div style="margin-top:12px;display:flex;gap:8px">
+    <a class="cta" href="#">このプランを採用枠に落とし込む</a>
+    <a class="cta" style="background:#2a78d6" href="#">タイムラインを編集する</a>
+  </div>
+
+  <p class="note" style="margin-top:12px">必要なら、このページを index.html と同じデザインに合わせて統合したHTMLを作ります。どのくらいパーソナルに見せたいか（完全公開 / 作品ベース / 内部用）を教えてください。</p>
+</div>
+</body>
+</html>
