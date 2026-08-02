@@ -1,2 +1,183 @@
-<h1>🌱 Cultivate</h1>
-<p>A gentle place to cultivate your career and yourself.</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>エンジニア転職ロードマップ ガントチャート</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzEiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjExIiByPSIzLjIiIGZpbGw9IiMyYTc4ZDYiLz4KICA8bGluZSB4MT0iMzIiIHkxPSIxNCIgeDI9IjMyIiB5Mj0iMTgiIHN0cm9rZT0iIzJhNzhkNiIgc3Ryb2tlLXdpZHRoPSIyLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxyZWN0IHg9IjEwIiB5PSIxNyIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjM3IiByeD0iMTMiIGZpbGw9IiMyYTc4ZDYiLz4KICA8Y2lyY2xlIGN4PSIyMyIgY3k9IjM1IiByPSI1IiBmaWxsPSIjZmZmZmZmIi8+CiAgPGNpcmNsZSBjeD0iNDEiIGN5PSIzNSIgcj0iNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxjaXJjbGUgY3g9IjIzLjUiIGN5PSIzNS41IiByPSIyLjEiIGZpbGw9IiMwYjBiMGIiLz4KICA8Y2lyY2xlIGN4PSI0MS41IiBjeT0iMzUuNSIgcj0iMi4xIiBmaWxsPSIjMGIwYjBiIi8+CiAgPHBhdGggZD0iTTIyIDQ1cTEwIDggMjAgMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iMzciIHI9IjIuNiIgZmlsbD0iIzFiYWY3YSIvPgogIDxjaXJjbGUgY3g9IjUyIiBjeT0iMzciIHI9IjIuNiIgZmlsbD0iIzFiYWY3YSIvPgo8L3N2Zz4K">
+<style>
+:root{
+  --border: rgba(0,0,0,0.14);
+  --border-strong: rgba(0,0,0,0.28);
+  --surface-1: #f2f1ee;
+  --surface-2: #ffffff;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --border: rgba(255,255,255,0.16);
+    --border-strong: rgba(255,255,255,0.32);
+    --surface-1: #232322;
+    --surface-2: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #9c9a92;
+  }
+  body{ background:#111110; }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:32px 16px;
+  background:#f7f6f3;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  color:var(--text-primary);
+}
+header.site-header{max-width:960px;margin:0 auto 20px;display:flex;align-items:center;gap:16px}
+.site-brand{display:flex;align-items:center;gap:12px}
+.site-brand h1{font-size:16px;font-weight:500;margin:0}
+.site-nav{margin-left:auto;display:flex;gap:12px;align-items:center}
+.site-nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px}
+.site-nav a.active{background:var(--surface-1);color:var(--text-primary);border:1px solid var(--border)}
+h1{font-size:16px;font-weight:500;margin:0 0 20px;color:var(--text-primary)}
+.gc-wrap{overflow-x:auto;max-width:960px;margin:0 auto}
+.gc-grid{display:grid;grid-template-columns:210px 1fr;grid-template-rows:40px 32px 40px 44px 32px 40px 40px 40px 32px 40px 40px 40px 32px 40px 40px 44px;min-width:760px;border:0.5px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-2);position:relative}
+.gc-vlines{grid-column:2;grid-row:1/17;position:relative;pointer-events:none}
+.gc-vline{position:absolute;top:0;bottom:0;width:0;border-left:1px dotted var(--border)}
+.gc-timeline{position:relative;border-left:0.5px solid var(--border);border-top:0.5px solid var(--border);grid-column:2}
+.gc-axis{position:relative;grid-column:2;grid-row:1;border-left:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.gc-corner{grid-column:1;grid-row:1;border-bottom:0.5px solid var(--border)}
+.gc-month{position:absolute;top:50%;transform:translate(0,-50%);font-size:11px;color:var(--text-secondary);white-space:nowrap}
+.gc-phase{grid-column:1/-1;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:13px;font-weight:500;background:var(--surface-1);border-top:0.5px solid var(--border);color:var(--text-primary)}
+.gc-swatch{width:10px;height:10px;border-radius:2px;flex:none}
+.gc-label{grid-column:1;display:flex;flex-direction:column;justify-content:center;padding:4px 12px;font-size:12px;color:var(--text-secondary);border-top:0.5px solid var(--border);line-height:1.3}
+.gc-sub{font-size:11px;color:var(--text-muted)}
+.gc-bar{position:absolute;top:50%;transform:translateY(-50%);height:18px;border-radius:5px}
+.gc-diamond{position:absolute;top:50%;width:9px;height:9px;transform:translate(-50%,-50%) rotate(45deg)}
+.gc-conn{position:absolute;top:50%;height:0;border-top:1px dashed var(--border-strong);transform:translateY(-50%)}
+.p1{background:#1baf7a}.p2{background:#2a78d6}.p3{background:#4a3aa7}.p4{background:#eb6834}
+@media (prefers-color-scheme: dark){
+.p1{background:#199e70}.p2{background:#3987e5}.p3{background:#9085e9}.p4{background:#d95926}
+}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12px;color:var(--text-secondary)}
+.legend span{Display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+.career-shift{max-width:960px;margin:40px auto 0;padding:28px;background:var(--surface-2);border:.5px solid var(--border);border-radius:12px}
+.goal-box{margin-top:16px;padding:20px;background:var(--surface-1);border-radius:10px}
+blockquote{margin:28px 0 0;padding-left:18px;border-left:4px solid #2a78d6;font-size:20px;font-weight:600}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="17" width="44" height="37" rx="13" fill="#2a78d6"/>
+      <circle cx="23" cy="35" r="5" fill="#ffffff"/>
+      <circle cx="41" cy="35" r="5" fill="#ffffff"/>
+    </svg>
+    <h1>エンジニア転職ロードマップ</h1>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html" class="active">ホーム</a>
+    <a href="azure.html">Azure学習プラン</a>
+  </nav>
+</header>
+
+<div class="gc-wrap">
+<h1>エンジニア転職ロードマップ（2026年7/24〜12/31）</h1>
+<div class="gc-grid">
+  <div class="gc-vlines">
+    <div class="gc-vline" style="left:24.4%"></div>
+    <div class="gc-vline" style="left:43.1%"></div>
+    <div class="gc-vline" style="left:62.5%"></div>
+    <div class="gc-vline" style="left:81.25%"></div>
+  </div>
+  <div class="gc-corner"></div>
+  <div class="gc-axis">
+    <div class="gc-month" style="left:0%">7/24(今日)</div>
+    <div class="gc-month" style="left:24.4%">9月</div>
+    <div class="gc-month" style="left:43.1%">10月</div>
+    <div class="gc-month" style="left:62.5%">11月</div>
+    <div class="gc-month" style="left:81.25%">12月</div>
+    <div class="gc-month" style="left:93%">12/31</div>
+  </div>
+
+  <div class="gc-phase" style="grid-row:2"><span class="gc-swatch p1"></span>Phase 1: 基礎インプット</div>
+  <div class="gc-label" style="grid-row:3">AI-900 学習＆受験<span class="gc-sub">〜8/1 受験</span></div>
+  <div class="gc-timeline" style="grid-row:3">
+    <div class="gc-bar p1" style="left:0%;width:5%"></div>
+    <div class="gc-diamond p1" style="left:5%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:4">東京都 基礎講座<span class="gc-sub">11/9(月)・11/11(水)・11/18(水)</span></div>
+  <div class="gc-timeline" style="grid-row:4">
+    <div class="gc-conn" style="left:67.5%;width:5.625%"></div>
+    <div class="gc-diamond p1" style="left:67.5%"></div>
+    <div class="gc-diamond p1" style="left:68.75%"></div>
+    <div class="gc-diamond p1" style="left:73.125%"></div>
+  </div>
+
+  <div class="gc-phase" style="grid-row:5"><span class="gc-swatch p2"></span>Phase 2: 応用＆開発プロトタイプ</div>
+  <div class="gc-label" style="grid-row:6">AI-102 インプット学習<span class="gc-sub">8月第2週〜10月上旬</span></div>
+  <div class="gc-timeline" style="grid-row:6">
+    <div class="gc-bar p2" style="left:10.6%;width:38.1%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:7">MTGツール 要件・設計</div>
+  <div class="gc-timeline" style="grid-row:7">
+    <div class="gc-bar p2" style="left:36.25%;width:9.4%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:8">プロトタイプ開発<span class="gc-sub">Azure×OpenAI</span></div>
+  <div class="gc-timeline" style="grid-row:8">
+    <div class="gc-bar p2" style="left:45.6%;width:19.4%"></div>
+  </div>
+
+  <div class="gc-phase" style="grid-row:9"><span class="gc-swatch p3"></span>Phase 3: 成果物ブラッシュアップ</div>
+  <div class="gc-label" style="grid-row:10">DB連携・Power Automate自動化</div>
+  <div class="gc-timeline" style="grid-row:10">
+    <div class="gc-bar p3" style="left:62.5%;width:11.9%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:11">UI/UX調整＆Azure公開</div>
+  <div class="gc-timeline" style="grid-row:11">
+    <div class="gc-bar p3" style="left:74.4%;width:9.4%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:12">ポートフォリオ解説資料作成<span class="gc-sub">〜12/20 完成目標</span></div>
+  <div class="gc-timeline" style="grid-row:12">
+    <div class="gc-bar p3" style="left:83.75%;width:9.4%"></div>
+  </div>
+
+  <div class="gc-phase" style="grid-row:13"><span class="gc-swatch p4"></span>Phase 4: AI-102受験＆選考活動</div>
+  <div class="gc-label" style="grid-row:14">AI-102 最終仕上げ＆受験<span class="gc-sub">〜12/12 受験</span></div>
+  <div class="gc-timeline" style="grid-row:14">
+    <div class="gc-bar p4" style="left:81.25%;width:6.9%"></div>
+    <div class="gc-diamond p4" style="left:88.1%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:15">職務経歴書・アピール文章作成</div>
+  <div class="gc-timeline" style="grid-row:15">
+    <div class="gc-bar p4" style="left:88.1%;width:7.5%"></div>
+  </div>
+  <div class="gc-label" style="grid-row:16">求人応募・面接対策・選考<span class="gc-sub">年明け以降も継続</span></div>
+  <div class="gc-timeline" style="grid-row:16">
+    <div class="gc-bar p4" style="left:95.6%;width:4.4%"></div>
+  </div>
+</div>
+<div class="legend">
+  <span><i class="p1"></i>Phase 1: 基礎インプット</span>
+  <span><i class="p2"></i>Phase 2: 応用＆開発プロトタイプ</span>
+  <span><i class="p3"></i>Phase 3: 成果物ブラッシュアップ</span>
+  <span><i class="p4"></i>Phase 4: AI-102受験＆選考活動</span>
+</div>
+</div>
+
+<div class="career-shift">
+<h2>🚀 このロードマップの先にあるキャリアシフト</h2>
+<p>目標は未経験エンジニアになることではなく、これまでのクリエイティブ・EC・UI/UX・マーケティング・コミュニティ運営の経験にAIを掛け合わせ、「ビジネスとAIをつなぐ人材」へキャリアシフトすること。</p>
+<h3>目指せるキャリア</h3>
+<ul><li>AIソリューションコンサルタント</li><li>AIプロダクトマネージャー</li><li>AI導入ディレクター</li><li>AI×UXデザイナー</li><li>自治体・NPO向けAIアドバイザー</li></ul>
+<div class="goal-box"><h3>12月までの最重要目標</h3><p><b>動く成果物を1つ完成させる。</b><br>資格は知識の証明。成果物は「仕事を任せられる人」の証明。</p></div>
+<blockquote>AIを作れる人ではなく、AIで課題を解決できる人を目指す。</blockquote>
+</div>
+
+</body>
+</html>
