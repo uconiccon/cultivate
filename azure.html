@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Azure学習プラン — cultivate</title>
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzEiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjExIiByPSIzLjIiIGZpbGw9IiMyYTc4ZDYiLz4KPC9zdmc+">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{
   --bg:#f7f6f3;
@@ -41,21 +42,29 @@ body{margin:0;padding:28px;font-family:-apple-system, BlinkMacSystemFont, "Hirag
 .table th,.table td{padding:8px;border-bottom:1px dashed var(--border);text-align:left;font-size:14px}
 .cta{display:inline-block;padding:10px 14px;background:var(--success);color:white;border-radius:8px;text-decoration:none}
 .note{font-size:13px;color:var(--muted)}
+.site-nav{margin-left:auto;display:flex;gap:8px;align-items:center}
+.site-nav a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:14px}
+.site-nav a.active{background:var(--card);color:var(--text-primary);border:1px solid var(--border)}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <div>
-      <h1>Azure学習プラン — cultivate</h1>
-      <div class="small">目的：AIを用いた実務プロダクトを設計・実装できるスキル獲得</div>
-    </div>
-    <div style="margin-left:auto">
-      <span class="badge">期間: 2026‑07〜2026‑12</span>
-<a class="cta" href="index.html" style="margin-left:12px;background:#2a78d6">ホームに戻る</a>
-    </div>
+<header class="header" style="max-width:960px;margin:0 auto 18px;display:flex;align-items:center;padding:0 12px;">
+  <div style="display:flex;align-items:center;gap:12px">
+    <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="17" width="44" height="37" rx="13" fill="#2a78d6"/>
+      <circle cx="23" cy="35" r="5" fill="#ffffff"/>
+      <circle cx="41" cy="35" r="5" fill="#ffffff"/>
+    </svg>
+    <h1>Azure学習プラン — cultivate</h1>
   </div>
+  <nav class="site-nav" style="margin-left:auto">
+    <a href="index.html" class="nav-link">ホーム</a>
+    <a href="azure.html" class="nav-link">Azure学習プラン</a>
+    <a class="cta" href="index.html" style="margin-left:12px;background:#2a78d6;color:white;border-radius:8px;padding:8px 12px;text-decoration:none">ホームに戻る</a>
+  </nav>
+</header>
 
+<div class="container">
   <div class="card">
     <div class="section-title">何のための学習か</div>
     <p>これまでのクリエイティブ／UX／マーケティング経験に、Azure + OpenAI を組み合わせた実務スキルを掛け合わせる。最終アウトプットは「動く成果物（Azure上で動作するプロトタイプ）」とその解説資料。</p>
@@ -151,5 +160,15 @@ body{margin:0;padding:28px;font-family:-apple-system, BlinkMacSystemFont, "Hirag
 
   <p class="note" style="margin-top:12px">必要なら、このページを index.html と同じデザインに合わせて統合したHTMLを作ります。どのくらいパーソナルに見せたいか（完全公開 / 作品ベース / 内部用）を教えてください。</p>
 </div>
+
+<script>
+  // nav の active を自動で切り替え
+  (function(){
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.site-nav .nav-link, .nav-link').forEach(a=>{
+      if(a.getAttribute('href') === path) a.classList.add('active');
+    });
+  })();
+</script>
 </body>
 </html>
