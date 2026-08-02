@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#2a78d6"/>
-  <!-- planet -->
-  <circle cx="34" cy="28" r="14" fill="#ffffff" opacity="0.12"/>
   <circle cx="28" cy="24" r="10" fill="#ffffff"/>
-  <!-- rocket -->
+  <circle cx="40" cy="34" r="5" fill="#ffffff"/>
   <g transform="translate(10,10) scale(0.9)">
     <path d="M22 4c-3 0-8 5-12 9 4 4 9 9 12 9s8-5 12-9c-4-4-9-9-12-9z" fill="#ffffff"/>
     <rect x="20" y="14" width="4" height="8" rx="1" fill="#2a78d6"/>
